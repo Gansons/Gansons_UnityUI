@@ -2,7 +2,7 @@
 - [x] Izveidota pamata ainas
 - [x] Izveidots Sākuma ekrāns
 - [x] Izveidots iestatījumu sadaļa
-- [ ] Pievienoti skaņu effekti ar nepieciešamo kodu
+- [x] Pievienoti skaņu effekti ar nepieciešamo kodu
 - [ ] Iespēja mainīt skaņu caur iestatījumiem
 - [ ] Varoņa izskata maiņa ar pogām
 - [ ] Varoņa drag and drop funkcija priekš vairogiem un zobeniem
