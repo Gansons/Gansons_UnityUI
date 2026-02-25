@@ -5,7 +5,7 @@
 - [x] Pievienoti skaņu effekti ar nepieciešamo kodu
 - [ ] Iespēja mainīt skaņu caur iestatījumiem
 - [ ] Varoņa izskata maiņa ar pogām
-- [ ] Varoņa drag and drop funkcija priekš vairogiem un zobeniem
+- [x] Varoņa drag and drop funkcija priekš vairogiem un zobeniem
 - [ ] Ievades lauks kas parādas pēc izveides dodot iespēju ievadīt vārdu un vecumu
 - [ ] Iespēju izvēlēties vismaz 2 tēlus, pre made characters
 - [ ] Tēla apraksts, attiecīgi pēc to klases, scroll down info
