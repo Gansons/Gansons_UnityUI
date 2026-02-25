@@ -7,14 +7,15 @@ public class OutfitChanger : MonoBehaviour
     [System.Serializable]
     public class SpriteOption
     {
+        public Image targetImage;      // Kur sprite tiek ielikts (Head (Image), Torso (Image), utt.)
+        public Transform targetObject; // Īstais objekts layeringam (Head, Torso, Left arm, utt.)
         public Sprite sprite;          // Sprite attēls
-        public Vector2 offset;         // Manuāla pozīcijas nobīde (X/Y)
-        public float scale = 1f;       // Manuāls izmērs
+        public Vector2 offset;         // Pozīcijas nobīde
+        public float scale = 1f;       // Izmērs
+        public int zIndex;             // Layering starp ķermeņa daļām
     }
 
-    public Image bodypart;             // UI Image, kur mainās sprite
-    public List<SpriteOption> options; // Visi varianti ar saviem offsetiem
-
+    public List<SpriteOption> options;
     private int currentIndex = 0;
 
     public void NextOption()
@@ -43,13 +44,21 @@ public class OutfitChanger : MonoBehaviour
     {
         SpriteOption opt = options[currentIndex];
 
-        // Mainām sprite
-        bodypart.sprite = opt.sprite;
+        // Sprite maiņa
+        opt.targetImage.sprite = opt.sprite;
 
-        // Mainām pozīciju
-        bodypart.rectTransform.anchoredPosition = opt.offset;
+        // Pozīcija
+        opt.targetImage.rectTransform.anchoredPosition = opt.offset;
 
-        // Mainām izmēru
-        bodypart.rectTransform.localScale = new Vector3(opt.scale, opt.scale, 1f);
+        // Scale
+        opt.targetImage.rectTransform.localScale = new Vector3(opt.scale, opt.scale, 1f);
+
+        // Z-index (GALVENAIS LABOJUMS)
+        // Šeit mēs mainām sibling index PAREIZAJAM objektam:
+        // Character → Head
+        // Character → Torso
+        // Character → Left arm
+        // utt.
+        opt.targetObject.SetSiblingIndex(opt.zIndex);
     }
 }
